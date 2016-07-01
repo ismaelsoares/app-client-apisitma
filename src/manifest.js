@@ -2,7 +2,7 @@ import Mappersmith from 'mappersmith';
 Mappersmith.Env.FIXTURE = true;
 Mappersmith.Env.USE_PROMISES = true;
 
-let Manifest = {
+let manifest = {
   host: 'http://api.sitma.com.br/v1',
   resources:{
     access:{
@@ -13,4 +13,4 @@ let Manifest = {
 
 
 
-export default Manifest;
+export default manifest;

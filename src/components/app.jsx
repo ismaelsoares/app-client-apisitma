@@ -4,17 +4,17 @@ import Logo from './logo';
 import LoginForm from './loginForm';
 import Mappersmith from 'mappersmith';
 import manifest from '../manifest';
-let Login = Mappersmith.forge(manifest);
 
 let App = React.createClass({
   onSubmit(username, password) {
     let ServerAPI = Mappersmith.forge(manifest);
     let date = { username: username, password: password };
-    ServerAPI.access.login({body: date}).then(function(res){
-      console.log(res.data);
-    })
-      .catch(function(err){
-        console.log(err.data);
+    ServerAPI.access.login({body: date})
+      .then((res) => {
+
+        console.log(res.data);
+      })
+      .catch((err) => {console.log(err.data);
       });
   },
 
