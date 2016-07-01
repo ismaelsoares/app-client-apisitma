@@ -11,7 +11,7 @@ let App = React.createClass({
     let date = { username: username, password: password };
     ServerAPI.access.login({body: date})
       .then((res) => {
-
+        alert(res.data.token)
         console.log(res.data);
       })
       .catch((err) => {console.log(err.data);
