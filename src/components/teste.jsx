@@ -15,7 +15,8 @@ let Login = React.createClass({
             success: function(data) {
                 alert(data.access_token);
                 this.setState({
-                    data: data let jwt = this.state.data;
+                    data: data,
+                    let jwt = this.state.data;
                 }.bind(this), error : function(xhr, status, err) {
                     alert("error");
                     console.error(this.props.url, status, err.toString());

@@ -5,12 +5,13 @@ import LoginForm from './loginForm';
 import Mappersmith from 'mappersmith';
 import manifest from '../manifest';
 
-let App = React.createClass({
-  onSubmit(username, password) {
+module.exports = React.createClass({
+  onSubmit(username, password){
     let ServerAPI = Mappersmith.forge(manifest);
     let date = { username: username, password: password };
     ServerAPI.access.login({body: date})
       .then((res) => {
+        const access_token = res.data.token;
         alert(res.data.token)
         console.log(res.data);
       })
@@ -31,7 +32,7 @@ let App = React.createClass({
     );
   }
 });
-export default App;
+
 /*
   login(resolve, reject){
         Api.resources.Post({username: username, password: password})
