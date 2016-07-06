@@ -7,11 +7,9 @@ let manifest = {
   resources:{
     access:{
           login:{path: '/login', method: 'post'},
-          me:{path: '/me', method: 'get'}
+          me:{path: '/me', method: 'get', authorization: 'Bearer'+ ' access_token' }
         }
     },
 };
-
-
 
 export default manifest;
