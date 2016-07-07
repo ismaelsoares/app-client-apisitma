@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from './logo';
 
 module.exports = React.createClass({
   getInitialState(){
@@ -21,15 +22,20 @@ module.exports = React.createClass({
   render(){
     return(
       <div>
-        <form className="formLogin" onSubmit={this.handleSubmit}>
-          <div>
-            <input placeholder={"Usuário"} type={"text"} onChange={this.handleUsernameChange} name='username'required />
-            <input placeholder={"Senha"} type={"password"} onChange={this.handlePasswordChange} name='password'required />
-          </div>
-          <div>
-            <button type='submit'>Logar</button>
-          </div>
-        </form>
+        <div id='logo'>
+          <Logo />
+        </div>
+        <div>
+          <form className="formLogin" onSubmit={this.handleSubmit}>
+            <div>
+              <input placeholder={"Usuário"} type={"text"} onChange={this.handleUsernameChange} name='username'required />
+              <input placeholder={"Senha"} type={"password"} onChange={this.handlePasswordChange} name='password'required />
+            </div>
+            <div>
+              <button type='submit'>Logar</button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
