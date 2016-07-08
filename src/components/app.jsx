@@ -1,36 +1,28 @@
 import React from 'react';
 import Input from './input';
-import LoginForm from './loginForm';
-import Mappersmith from 'mappersmith';
-import manifest from '../manifest';
+import Login from './login';
+import Dashboard from './dashboard';
 
 
-let App = ComposedComponent => class extends React.Component{
-  onSubmit(username, password){
-    let ServerAPI = Mappersmith.forge(manifest);
-    let date = { username: username, password: password };
-    ServerAPI.access.login({body: date})
-      .then((res) => {
-        const access_token = res.data.token;
-        alert(res.data.token)
-        console.log(res.data);
-      })
-      .catch((err) => {console.log(err.data);
-      });
-  }
+module.exports = React.createClass({
+  getInitialState(){
+    return{Component : Login};
+  },
+
+  toHandler(component){
+    this.setState({
+      Component : component
+    });
+  },
 
   render(){
+    let {Component} = this.state;
     return(
-      <div>
-        <div id='loginForm'>
-          <ComposedComponent onSubmit={this.onSubmit} {...this.state} {...this.props}/>
-        </div>
-      </div>
+      <Component toHandler={this.toHandler} />
+
     );
   }
-};
-
-export default App(LoginForm);
+});
 
 /*
   login(resolve, reject){

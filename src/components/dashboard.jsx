@@ -1,24 +1,18 @@
 import React from 'react';
 import Me from './me';
+import Login from './login';
 
-let newData = {
-  data: 'Welcome to Dashboard API Sitma!'
-};
-
-let Dashboard = ComposedComponent => class extends React.Component{
-  componentDidMount(){
-      this.setState({
-        data : newData.data
-      });
-  }
-
+let Dashboard = React.createClass({
+  logout(){
+    this.props.toHandler(Login);
+  },
   render(){
     return(
       <div>
-        <ComposedComponent {...this.props} {...this.state}/>
+          <button onClick={this.logout}>Sair</button>
       </div>
     );
   }
-};
+});
 
 export default Dashboard;
