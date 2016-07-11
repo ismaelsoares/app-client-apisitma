@@ -1,18 +1,18 @@
 import React from 'react';
 import Me from './me';
+import Faq from './faq';
 import Login from './login';
 
-let Dashboard = React.createClass({
-  logout(){
-    this.props.toHandler(Login);
+module.exports = React.createClass({
+  me(event){
+    event.preventDefault();
+    this.props.toHandler(Me);
   },
   render(){
     return(
       <div>
-          <button onClick={this.logout}>Sair</button>
+          <button onClick={this.me}>Configurações de Usuário</button>
       </div>
     );
   }
 });
-
-export default Dashboard;

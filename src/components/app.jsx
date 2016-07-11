@@ -1,8 +1,6 @@
 import React from 'react';
 import Input from './input';
 import Login from './login';
-import Dashboard from './dashboard';
-
 
 module.exports = React.createClass({
   getInitialState(){

@@ -6,7 +6,7 @@ import manifest from '../manifest';
 
 module.exports = React.createClass({
   getInitialState(){
-    return{ username: '', password: ''};
+    return{ username: '', password: '', access_token: ''};
   },
 
   handleUsernameChange(event){
@@ -27,7 +27,6 @@ module.exports = React.createClass({
     let date = { username: username, password: password };
     ServerAPI.access.login({body: date})
       .then((res) => {
-        const access_token = res.data.token;
         console.log(res.data);
         this.props.toHandler(Dashboard);
       })
