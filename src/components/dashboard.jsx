@@ -8,6 +8,7 @@ module.exports = React.createClass({
     event.preventDefault();
     this.props.toHandler(Me);
   },
+
   render(){
     return(
       <div>

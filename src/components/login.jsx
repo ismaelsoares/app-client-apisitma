@@ -30,6 +30,9 @@ module.exports = React.createClass({
         console.log(res.data);
         this.props.toHandler(Dashboard);
       })
+      .then((response) => {
+        this.setState({access_token: response.data.token});
+      })
       .catch((err) => {
         console.log(err.data);
       });
