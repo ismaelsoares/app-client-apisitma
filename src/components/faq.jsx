@@ -4,7 +4,7 @@ let Faq = React.createClass({
   render(){
     return(
       <div>
-        <h1>Welcome to Sitma API</h1>
+        <h1>Welcome FAQ</h1>
       </div>
     );
   }

@@ -1,10 +1,9 @@
 import React from 'react';
-import Input from './input';
 import Login from './login';
 
 module.exports = React.createClass({
   getInitialState(){
-    return{Component : Login};
+    return{Component : Login, Token: ''};
   },
 
   toHandler(component){
@@ -13,10 +12,17 @@ module.exports = React.createClass({
     });
   },
 
+  toAuth(token){
+    this.setState({
+      Token : token
+    })
+  },
+
   render(){
     let {Component} = this.state;
+    let {Token} = this.state;
     return(
-      <Component toHandler={this.toHandler} />
+      <Component toHandler={this.toHandler} toAuth={this.toAuth} />
 
     );
   }

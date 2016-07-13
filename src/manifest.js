@@ -1,5 +1,4 @@
 import Mappersmith from 'mappersmith';
-Mappersmith.Env.FIXTURE = true;
 Mappersmith.Env.USE_PROMISES = true;
 
 let manifest = {
@@ -7,7 +6,7 @@ let manifest = {
   resources:{
     access:{
           login:{path: '/login', method: 'post'},
-          me:{path: '/me', method: 'get', authorization: 'Bearer'+ ' access_token' }
+          me:{path: '/me', method: 'get', authorization: 'Bearer' + ' access_token' }
         }
     },
 };
