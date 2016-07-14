@@ -25,13 +25,14 @@ module.exports = React.createClass({
   handleSubmit(username, password){
     let ServerAPI = Mappersmith.forge(manifest);
     let date = { username: username, password: password };
-    ServerAPI.access.login(date)
+    ServerAPI.access.post(date)
       .then((res) => {
-        console.log(res.data);
+
+        //console.log(res.data);
         this.setState({acess_token: res.data.token});
-        console.log(this.state.acess_token);
-        this.props.toHandler(Dashboard);
-        this.props.toAuth(this.state.acess_token);
+        //console.log(this.state.acess_token);
+        this.props.toHandler(Dashboard, { token: res.data.token });
+        //this.props.toAuth(this.state.acess_token);
       })
       .catch((err) => {
         console.log(err.data);

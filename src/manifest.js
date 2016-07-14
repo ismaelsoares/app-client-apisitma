@@ -5,8 +5,8 @@ let manifest = {
   host: 'http://api.sitma.com.br/v1',
   resources:{
     access:{
-          login:{path: '/login', method: 'post'},
-          me:{path: '/me', method: 'get', authorization: 'Bearer' + ' access_token' }
+          post:{path: '/login', method: 'post'},
+          me:{path: '/me', method: 'get'}
         }
     },
 };

@@ -1,5 +1,3 @@
-import Dispatcher from '../dispatcher/Dispatcher';
-
 let UseToken = {
   login: ({username, jwt}) => {
     localStorage.setItem("jwt", jwt);

@@ -3,12 +3,13 @@ import Login from './login';
 
 module.exports = React.createClass({
   getInitialState(){
-    return{Component : Login, Token: ''};
+    return{Component : Login, Token: '', props: undefined};
   },
 
-  toHandler(component){
+  toHandler(component, props){
     this.setState({
-      Component : component
+      Component : component,
+      props: props
     });
   },
 
@@ -22,7 +23,7 @@ module.exports = React.createClass({
     let {Component} = this.state;
     let {Token} = this.state;
     return(
-      <Component toHandler={this.toHandler} toAuth={this.toAuth} />
+      <Component toHandler={this.toHandler} toAuth={this.toAuth} {...this.state.props} />
 
     );
   }

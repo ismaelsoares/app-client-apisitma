@@ -4,14 +4,17 @@ import Faq from './faq';
 import Login from './login';
 import Mappersmith from 'mappersmith';
 import manifest from '../manifest';
-
 const header = {Authorization: 'Bearer' + 'Token'};
 
 module.exports = React.createClass({
   me(event){
     event.preventDefault();
     let AcessApi = Mappersmith.forge(manifest);
-    AcessApi.access.me(header)
+    AcessApi.access.me({
+      headers: {
+        Authorization: `Basic ${this.props.token}`
+      }
+    })
     .then((res) => {
       console.log(res.data);
       this.props.toHandler(Me);
